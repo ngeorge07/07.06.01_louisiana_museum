@@ -52,19 +52,8 @@ barba.init({
 });
 
 // burger
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
-const navLink = document.querySelectorAll(".nav-link");
+const navToggle = document.querySelector(".nav__toggle");
 
-hamburger.addEventListener("click", mobileMenu);
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
+navToggle.addEventListener("click", () => {
+  document.body.classList.toggle("nav-open");
+});

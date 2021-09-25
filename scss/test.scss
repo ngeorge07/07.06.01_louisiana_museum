@@ -13,6 +13,13 @@ body,
 html {
   margin: 0;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*********************************
 VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -71,7 +78,7 @@ IT BEGINS HERE
 
       svg {
         color: white;
-        width: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+        width: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
       }
     }
 
@@ -120,9 +127,12 @@ header {
   nav {
     display: flex;
     justify-content: space-between;
-    margin: 1rem 3rem 1rem 3rem;
+    margin: 0 auto;
+    align-items: center;
+    height: 9vh;
+    max-width: 90%;
 
-    ul {
+    .nav-links {
       display: flex;
       list-style: none;
       gap: 3rem;
@@ -131,6 +141,7 @@ header {
       font-family: "gotham";
       font-weight: normal;
       font-style: normal;
+      margin: 0;
 
       li {
         a {
@@ -177,20 +188,21 @@ header {
 
     img {
       width: 13rem;
-      margin-top: 0.8rem;
     }
 
-    #hamburger {
+    .burger {
       display: none;
-    }
+      background: none;
+      border: none;
+      cursor: pointer;
 
-    .bar {
-      display: block;
-      width: 3px;
-      height: 35px;
-      margin: auto 2.5px;
-      transition: all 0.3s ease-in-out;
-      background-color: #101010;
+      span {
+        display: inline-block;
+        width: 3px;
+        height: 30px;
+        transition: all 0.3s ease-in-out;
+        background-color: #101010;
+      }
     }
   }
 }
@@ -244,10 +256,7 @@ IT STARS HERE
         display: block;
         width: 0%;
         height: 1px;
-        bottom: 0px;
-        position: relative;
         background-color: currentColor;
-
         transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
       }
 
@@ -275,51 +284,31 @@ MEDIA QUERIE FOR BURGER MENU BELOW
 IT STARTS HERE
 **********************************/
 @media only screen and (max-width: 1110px) {
+  body {
+    overflow-x: hidden;
+  }
+
   /* burger menu visible */
-  header {
-    nav {
-      img {
-        margin-top: 1.35rem;
-      }
+  header nav .nav-links {
+    position: absolute;
+    right: 0px;
+    top: 9vh;
+    height: 85vh;
+    width: 40%;
+    background-color: white;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
 
-      #nav-menu {
-        position: fixed;
-        right: -150%;
-        top: 3.2rem;
-        flex-direction: column;
-        background-color: #fff;
-        width: 100vw;
-        height: 100vh;
-        text-align: center;
-        transition: right 0.5s linear;
-        background-color: #f8d48f;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        z-index: 3;
-      }
-
-      #nav-menu.active {
-        left: 5rem;
-        right: 0;
-      }
-
-      #hamburger {
-        display: flex;
-        cursor: pointer;
-      }
-
-      #hamburger.active .bar:nth-child(1) {
-        transform: translateY(-10px);
-        opacity: 0;
-      }
-
-      #hamburger.active .bar:nth-child(2) {
-        transform: translateX(4px) rotate(45deg);
-      }
-
-      #hamburger.active .bar:nth-child(3) {
-        transform: translateX(-4px) rotate(-45deg);
-      }
+    li .lefty {
+      margin-left: 0;
     }
+  }
+
+  header nav .burger {
+    display: block;
   }
 }
 /*********************************

@@ -17,6 +17,13 @@ html {
   margin: 0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 /*********************************
 VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -93,7 +100,7 @@ IT BEGINS HERE
 
 .index .split a svg {
   color: white;
-  width: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+  width: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .index .split a:nth-child(3) {
@@ -147,10 +154,15 @@ header nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 1rem 3rem 1rem 3rem;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 9vh;
+  max-width: 90%;
 }
 
-header nav ul {
+header nav .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,9 +173,10 @@ header nav ul {
   font-family: "gotham";
   font-weight: normal;
   font-style: normal;
+  margin: 0;
 }
 
-header nav ul li a {
+header nav .nav-links li a {
   pointer-events: auto;
   -webkit-transition: color 200ms 400ms;
   transition: color 200ms 400ms;
@@ -173,7 +186,7 @@ header nav ul li a {
           transition-delay: 850ms;
 }
 
-header nav ul li a:after {
+header nav .nav-links li a:after {
   content: "";
   display: block;
   width: 100%;
@@ -185,11 +198,11 @@ header nav ul li a:after {
   transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
 }
 
-header nav ul li a:hover:after {
+header nav .nav-links li a:hover:after {
   width: 0;
 }
 
-header nav ul li .external {
+header nav .nav-links li .external {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr auto;
@@ -197,29 +210,30 @@ header nav ul li .external {
   grid-column-gap: 0.5rem;
 }
 
-header nav ul li .lefty {
+header nav .nav-links li .lefty {
   margin-left: -1.5rem;
 }
 
-header nav ul li svg {
+header nav .nav-links li svg {
   color: black;
   width: calc(11px + (18 - 11) * ((100vw - 300px) / (1600 - 300)));
 }
 
 header nav img {
   width: 13rem;
-  margin-top: 0.8rem;
 }
 
-header nav #hamburger {
+header nav .burger {
   display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-header nav .bar {
-  display: block;
+header nav .burger span {
+  display: inline-block;
   width: 3px;
-  height: 35px;
-  margin: auto 2.5px;
+  height: 30px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
@@ -272,8 +286,6 @@ IT STARS HERE
     display: block;
     width: 0%;
     height: 1px;
-    bottom: 0px;
-    position: relative;
     background-color: currentColor;
     -webkit-transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
     transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
@@ -299,51 +311,36 @@ MEDIA QUERIE FOR BURGER MENU BELOW
 IT STARTS HERE
 **********************************/
 @media only screen and (max-width: 1110px) {
-  /* burger menu visible */
-  header nav img {
-    margin-top: 1.35rem;
+  body {
+    overflow-x: hidden;
   }
-  header nav #nav-menu {
-    position: fixed;
-    right: -150%;
-    top: 3.2rem;
+  /* burger menu visible */
+  header nav .nav-links {
+    position: absolute;
+    right: 0px;
+    top: 9vh;
+    height: 85vh;
+    width: 40%;
+    background-color: white;
+    z-index: 1;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-color: #fff;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    -webkit-transition: right 0.5s linear;
-    transition: right 0.5s linear;
-    background-color: #f8d48f;
-    -webkit-box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-            box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    z-index: 3;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
-  header nav #nav-menu.active {
-    left: 5rem;
-    right: 0;
+  header nav .nav-links li .lefty {
+    margin-left: 0;
   }
-  header nav #hamburger {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    cursor: pointer;
-  }
-  header nav #hamburger.active .bar:nth-child(1) {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-    opacity: 0;
-  }
-  header nav #hamburger.active .bar:nth-child(2) {
-    -webkit-transform: translateX(4px) rotate(45deg);
-            transform: translateX(4px) rotate(45deg);
-  }
-  header nav #hamburger.active .bar:nth-child(3) {
-    -webkit-transform: translateX(-4px) rotate(-45deg);
-            transform: translateX(-4px) rotate(-45deg);
+  header nav .burger {
+    display: block;
   }
 }
 
