@@ -1,0 +1,343 @@
+/*********************************
+VERY IMPORTANT STUFF DO NOT TOUCH
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************/
+#container {
+  display: grid;
+}
+#container > main {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+body,
+html {
+  margin: 0;
+}
+/*********************************
+VERY IMPORTANT STUFF DO NOT TOUCH
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+**********************************/
+
+/*********************************
+THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
+
+IT BEGINS HERE
+**********************************/
+.index {
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+    font: 900 2em cookie;
+    margin: 0;
+    color: white;
+
+    h3 {
+      font-family: "gotham";
+      font-weight: normal;
+      font-style: normal;
+      grid-row: 1/2;
+      grid-column: 1/-1;
+      align-self: end;
+      justify-self: center;
+      mix-blend-mode: difference;
+      margin: 0;
+      font-size: calc(55px + (100 - 55) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    p {
+      font-family: "gotham";
+      font-weight: normal;
+      font-style: normal;
+      grid-row: 2/3;
+      grid-column: 2/3;
+      z-index: 1;
+      align-self: start;
+      padding-left: 2.5rem;
+      margin: 0;
+      font-size: calc(22px + (50 - 22) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    a {
+      font-family: "gotham";
+      font-weight: normal;
+      font-style: normal;
+      font-size: calc(22px + (35 - 22) * ((100vw - 300px) / (1600 - 300)));
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 7rem;
+      color: white;
+
+      svg {
+        color: white;
+        width: calc(16px + (22 - 16) * ((100vw - 300px) / (1600 - 300)));
+      }
+    }
+
+    a:nth-child(3) {
+      background: url("https://louisiana.dk/wp-content/uploads/2020/10/3_KMA0508-960x736.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding-left: 3rem;
+
+      grid-row: 1/-1;
+      grid-column: 1/2;
+
+      svg {
+        padding-right: 0.5rem;
+      }
+    }
+
+    a:nth-child(4) {
+      background-color: black;
+      text-align: right;
+      padding-right: 3rem;
+      justify-content: right;
+      grid-row: 1/-1;
+      grid-column: 2/3;
+
+      svg {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+/*********************************
+
+THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
+
+IT ENDS HERE
+**********************************/
+
+/*********************************
+THE HEADER FOR HOME PAGE CSS IS BELOW
+
+IT STARTS HERE
+**********************************/
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 3rem 1rem 3rem;
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 3rem;
+      padding: 0;
+      font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+      font-family: "gotham";
+      font-weight: normal;
+      font-style: normal;
+
+      li {
+        a {
+          pointer-events: auto;
+          transition: color 200ms 400ms;
+          text-decoration: none;
+
+          color: black;
+
+          transition-delay: 850ms;
+        }
+        a:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          bottom: 0px;
+          position: relative;
+          background-color: currentColor;
+
+          transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+        }
+
+        a:hover:after {
+          width: 0;
+        }
+
+        .external {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          grid-column-gap: 0.5rem;
+        }
+
+        .lefty {
+          margin-left: -1.5rem;
+        }
+
+        svg {
+          color: black;
+          width: calc(11px + (18 - 11) * ((100vw - 300px) / (1600 - 300)));
+        }
+      }
+    }
+
+    img {
+      width: 13rem;
+      margin-top: 0.8rem;
+    }
+
+    #hamburger {
+      display: none;
+    }
+
+    .bar {
+      display: block;
+      width: 3px;
+      height: 35px;
+      margin: auto 2.5px;
+      transition: all 0.3s ease-in-out;
+      background-color: #101010;
+    }
+  }
+}
+/*********************************
+THE HEADER FOR HOME PAGE CSS IS ABOVE
+
+IT ENDS HERE
+**********************************/
+
+/*********************************
+MEDIA QUERIE FOR MOBILE VIEW BELOW
+
+IT STARS HERE
+**********************************/
+@media only screen and (min-width: 850px) {
+  /*********************************
+  MOBILE VIEW FOR HOME PAGE NESTED IN INDEX BELOW
+
+  IT STARS HERE
+  **********************************/
+  .index {
+    .split {
+      a:nth-child(3) {
+        justify-content: end;
+        padding-right: 3rem;
+      }
+
+      a:nth-child(3):after {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 1px;
+        bottom: 0px;
+        position: relative;
+        background-color: currentColor;
+
+        transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+      }
+
+      a:nth-child(3):hover:after {
+        width: 100%;
+      }
+
+      a:nth-child(4) {
+        justify-content: start;
+        padding-left: 3rem;
+      }
+
+      a:nth-child(4):before {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 1px;
+        bottom: 0px;
+        position: relative;
+        background-color: currentColor;
+
+        transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+      }
+
+      a:nth-child(4):hover:before {
+        width: 100%;
+      }
+    }
+  }
+  /*********************************
+  MOBILE VIEW FOR HOME PAGE NESTED IN INDEX ABOVE
+
+  IT ENDS HERE
+  **********************************/
+}
+
+/*********************************
+MEDIA QUERIE FOR MOBILE VIEW ABOVE
+
+IT ENDS HERE
+**********************************/
+
+/*********************************
+MEDIA QUERIE FOR BURGER MENU BELOW
+
+IT STARTS HERE
+**********************************/
+@media only screen and (max-width: 1110px) {
+  /* burger menu visible */
+  header {
+    nav {
+      img {
+        margin-top: 1.35rem;
+      }
+
+      #nav-menu {
+        position: fixed;
+        right: -150%;
+        top: 3.2rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        transition: right 0.5s linear;
+        background-color: #f8d48f;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 3;
+      }
+
+      #nav-menu.active {
+        left: 5rem;
+        right: 0;
+      }
+
+      #hamburger {
+        display: flex;
+        cursor: pointer;
+      }
+
+      #hamburger.active .bar:nth-child(1) {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+
+      #hamburger.active .bar:nth-child(2) {
+        transform: translateX(4px) rotate(45deg);
+      }
+
+      #hamburger.active .bar:nth-child(3) {
+        transform: translateX(-4px) rotate(-45deg);
+      }
+    }
+  }
+}
+/*********************************
+MEDIA QUERIE FOR BURGER MENU ABOVE
+
+IT ENDS HERE
+**********************************/
+
+/*********************************
+SOME TEST STYLING FOR PAGE 2
+
+IT STARTS HERE
+**********************************/
+.page2 {
+  h1 {
+    color: green;
+  }
+  p {
+    color: hotpink;
+  }
+}
