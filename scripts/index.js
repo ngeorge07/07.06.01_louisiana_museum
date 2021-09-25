@@ -52,8 +52,24 @@ barba.init({
 });
 
 // burger
-const navToggle = document.querySelector(".nav__toggle");
+const navSlide = () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links li");
 
-navToggle.addEventListener("click", () => {
-  document.body.classList.toggle("nav-open");
-});
+  burger.addEventListener("click", () => {
+    console.log("ana");
+    nav.classList.toggle("nav-active");
+    burger.classList.toggle("move");
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 7 + 0.3
+        }s`;
+      }
+    });
+  });
+};
+navSlide();

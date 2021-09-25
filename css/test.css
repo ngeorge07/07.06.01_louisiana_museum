@@ -29,6 +29,134 @@ VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************/
 /*********************************
+THE HEADER CSS IS BELOW
+
+IT STARTS HERE
+**********************************/
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  padding: 0;
+  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-family: "gotham";
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: inline-block;
+  width: 3px;
+  height: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 9vh;
+  max-width: 90%;
+}
+
+nav li a {
+  pointer-events: auto;
+  -webkit-transition: color 200ms 400ms;
+  transition: color 200ms 400ms;
+  text-decoration: none;
+  color: black;
+  -webkit-transition-delay: 850ms;
+          transition-delay: 850ms;
+}
+
+nav li a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0px;
+  position: relative;
+  background-color: currentColor;
+  -webkit-transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+  transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+}
+
+nav li a:hover:after {
+  width: 0;
+}
+
+nav li .external {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-column-gap: 0.5rem;
+}
+
+nav li .lefty {
+  margin-left: -1.5rem;
+}
+
+nav li svg {
+  color: black;
+  width: calc(11px + (18 - 11) * ((100vw - 300px) / (1600 - 300)));
+}
+
+nav img {
+  width: 13rem;
+}
+
+@-webkit-keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+/*********************************
+THE HEADER FOR HOME PAGE CSS IS ABOVE
+
+IT ENDS HERE
+**********************************/
+/*********************************
 THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
 
 IT BEGINS HERE
@@ -143,108 +271,6 @@ THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
 IT ENDS HERE
 **********************************/
 /*********************************
-THE HEADER FOR HOME PAGE CSS IS BELOW
-
-IT STARTS HERE
-**********************************/
-header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 9vh;
-  max-width: 90%;
-}
-
-header nav .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  gap: 3rem;
-  padding: 0;
-  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-family: "gotham";
-  font-weight: normal;
-  font-style: normal;
-  margin: 0;
-}
-
-header nav .nav-links li a {
-  pointer-events: auto;
-  -webkit-transition: color 200ms 400ms;
-  transition: color 200ms 400ms;
-  text-decoration: none;
-  color: black;
-  -webkit-transition-delay: 850ms;
-          transition-delay: 850ms;
-}
-
-header nav .nav-links li a:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  bottom: 0px;
-  position: relative;
-  background-color: currentColor;
-  -webkit-transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
-  transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
-}
-
-header nav .nav-links li a:hover:after {
-  width: 0;
-}
-
-header nav .nav-links li .external {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-  grid-column-gap: 0.5rem;
-}
-
-header nav .nav-links li .lefty {
-  margin-left: -1.5rem;
-}
-
-header nav .nav-links li svg {
-  color: black;
-  width: calc(11px + (18 - 11) * ((100vw - 300px) / (1600 - 300)));
-}
-
-header nav img {
-  width: 13rem;
-}
-
-header nav .burger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-header nav .burger span {
-  display: inline-block;
-  width: 3px;
-  height: 30px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #101010;
-}
-
-/*********************************
-THE HEADER FOR HOME PAGE CSS IS ABOVE
-
-IT ENDS HERE
-**********************************/
-/*********************************
 MEDIA QUERIE FOR MOBILE VIEW BELOW
 
 IT STARS HERE
@@ -315,7 +341,7 @@ IT STARTS HERE
     overflow-x: hidden;
   }
   /* burger menu visible */
-  header nav .nav-links {
+  .nav-links {
     position: absolute;
     right: 0px;
     top: 9vh;
@@ -335,12 +361,42 @@ IT STARTS HERE
             align-items: center;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
   }
-  header nav .nav-links li .lefty {
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li .lefty {
     margin-left: 0;
   }
-  header nav .burger {
+  .nav-active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  .burger {
     display: block;
+  }
+  .burger.move span:nth-child(1) {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    opacity: 0;
+  }
+  .burger.move span:nth-child(2) {
+    -webkit-transform: translateX(3px) rotate(45deg);
+            transform: translateX(3px) rotate(45deg);
+  }
+  .burger.move span:nth-child(3) {
+    -webkit-transform: translateX(-3px) rotate(-45deg);
+            transform: translateX(-3px) rotate(-45deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-active {
+    width: 80%;
   }
 }
 
