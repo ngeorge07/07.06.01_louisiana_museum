@@ -406,15 +406,164 @@ MEDIA QUERIE FOR BURGER MENU ABOVE
 IT ENDS HERE
 **********************************/
 /*********************************
-SOME TEST STYLING FOR PAGE 2
-
-IT STARTS HERE
+SOME TEST STYLING FOR ROOMS START
 **********************************/
-.page2 h1 {
-  color: green;
+#desktop {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  max-width: 80%;
+  margin: auto;
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
 }
 
-.page2 p {
-  color: hotpink;
+#desktop h1 {
+  grid-column: 1/-1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#desktop img {
+  width: 100%;
+}
+
+#desktop .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-row: 2/-1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#desktop .card:nth-child(2) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+#desktop .card:nth-child(3) {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+#desktop .card:nth-child(4) {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+}
+
+.carousel {
+  position: relative;
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel__image {
+  width: 100%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.carousel__track-container {
+  height: 100%;
+  position: relative;
+}
+
+.carousel__track {
+  list-style: none;
+  list-style: none;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+.carousel__button {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.carousel__button svg {
+  width: 20px;
+}
+
+.carousel__button--left {
+  left: -40px;
+}
+
+.carousel__button--right {
+  right: -40px;
+}
+
+.carousel__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px 0;
+  margin-top: 1.5rem;
+}
+
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 0 12px;
+}
+
+.carousel__indicator.current-slide {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media (min-width: 650px) {
+  #mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  #desktop {
+    display: none;
+  }
 }
 /*# sourceMappingURL=test.css.map */

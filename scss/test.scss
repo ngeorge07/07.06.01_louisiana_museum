@@ -360,15 +360,132 @@ IT ENDS HERE
 **********************************/
 
 /*********************************
-SOME TEST STYLING FOR PAGE 2
-
-IT STARTS HERE
+SOME TEST STYLING FOR ROOMS START
 **********************************/
-.page2 {
+#desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  max-width: 80%;
+  margin: auto;
+  column-gap: 5rem;
+
   h1 {
-    color: green;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-self: center;
   }
-  p {
-    color: hotpink;
+
+  img {
+    width: 100%;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    grid-row: 2/-1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card:nth-child(2) {
+    grid-column: 1/2;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2/3;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 3/4;
+  }
+}
+
+.carousel {
+  position: relative;
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel__image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.carousel__track-container {
+  height: 100%;
+  position: relative;
+  // background-color: hotpink;
+}
+
+.carousel__track {
+  list-style: none;
+  list-style: none;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.carousel__button {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  svg {
+    width: 20px;
+  }
+}
+
+.carousel__button--left {
+  left: -40px;
+}
+
+.carousel__button--right {
+  right: -40px;
+}
+
+.carousel__nav {
+  // background: pink;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin-top: 1.5rem;
+}
+
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 0 12px;
+}
+
+.carousel__indicator.current-slide {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media (min-width: 650px) {
+  #mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  #desktop {
+    display: none;
   }
 }
