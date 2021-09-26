@@ -417,12 +417,15 @@ SOME TEST STYLING FOR ROOMS START
 .carousel__track-container {
   height: 100%;
   position: relative;
-  // background-color: hotpink;
+  overflow: hidden;
 }
 
 .carousel__track {
   list-style: none;
   list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
 }
 
 .carousel__slide {
@@ -472,10 +475,15 @@ SOME TEST STYLING FOR ROOMS START
   height: 15px;
   background: rgba(0, 0, 0, 0.3);
   margin: 0 12px;
+  cursor: pointer;
 }
 
 .carousel__indicator.current-slide {
   background: rgba(0, 0, 0, 0.75);
+}
+
+.is-hidden {
+  display: none;
 }
 
 @media (min-width: 650px) {

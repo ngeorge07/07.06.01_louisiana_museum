@@ -1,6 +1,17 @@
-var tl = gsap.timeline();
+// let tl = gsap.timeline();
 
 barba.init({
+  views: [
+    {
+      namespace: "rooms",
+      afterEnter({ next }) {
+        let script = document.createElement("script");
+        script.src = "/scripts/rooms.js";
+        next.container.appendChild(script);
+      },
+    },
+  ],
+
   transitions: [
     {
       name: "right-to-left",
@@ -9,7 +20,7 @@ barba.init({
       },
 
       to: {
-        namespace: ["page3", "home"],
+        namespace: ["rooms", "home"],
       },
 
       leave(data) {
@@ -19,7 +30,7 @@ barba.init({
         });
       },
       enter(data) {
-        return tl.from(data.next.container, {
+        return gsap.from(data.next.container, {
           opacity: 0,
           x: "100vw",
         });
@@ -29,7 +40,7 @@ barba.init({
     {
       name: "left-to-right",
       from: {
-        namespace: ["home", "page3"],
+        namespace: ["home", "rooms"],
       },
 
       to: {
@@ -52,7 +63,7 @@ barba.init({
 });
 
 // burger
-const navSlide = () => {
+function navSlide() {
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".nav-links");
   const navLinks = document.querySelectorAll(".nav-links li");
@@ -71,5 +82,6 @@ const navSlide = () => {
       }
     });
   });
-};
+}
+
 navSlide();
