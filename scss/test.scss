@@ -182,10 +182,10 @@ IT BEGINS HERE
       padding-bottom: 7rem;
       color: white;
 
-      svg {
-        color: white;
-        width: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
-      }
+      // svg {
+      //   color: white;
+      //   width: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
+      // }
     }
 
     a:nth-child(3) {
@@ -200,6 +200,9 @@ IT BEGINS HERE
 
       svg {
         padding-right: 0.5rem;
+        width: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
+        filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
+          brightness(109%) contrast(101%);
       }
     }
 
@@ -213,6 +216,8 @@ IT BEGINS HERE
 
       svg {
         padding-left: 0.5rem;
+        width: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
+        color: white;
       }
     }
   }
