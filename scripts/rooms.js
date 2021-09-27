@@ -7,13 +7,21 @@ function addCarousel() {
   const dotsNav = document.querySelector(".carousel__nav");
   const dots = Array.from(dotsNav.children);
 
-  const slideWidth = slides[0].getBoundingClientRect().width;
+  window.addEventListener("resize", resize);
+
+  let slideWidth = slides[0].getBoundingClientRect().width;
+
+  function resize() {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    slides.forEach(setSlidePosition);
+  }
 
   // set slides positions
   function setSlidePosition(slide, index) {
     slide.style.left = slideWidth * index + "px";
     console.log(slide.style.left);
   }
+
   slides.forEach(setSlidePosition);
 
   function moveToSlide(track, currentSlide, targetSlide) {
