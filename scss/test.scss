@@ -362,50 +362,19 @@ IT ENDS HERE
 /*********************************
 SOME TEST STYLING FOR ROOMS START
 **********************************/
-#desktop {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  max-width: 80%;
-  margin: auto;
-  column-gap: 5rem;
-
+.rooms {
   h1 {
     grid-column: 1/-1;
     grid-row: 1/2;
-    justify-self: center;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    grid-row: 2/-1;
-    align-items: center;
     text-align: center;
-  }
-
-  .card:nth-child(2) {
-    grid-column: 1/2;
-  }
-
-  .card:nth-child(3) {
-    grid-column: 2/3;
-  }
-
-  .card:nth-child(4) {
-    grid-column: 3/4;
   }
 }
 
 .carousel {
   position: relative;
-  height: 600px;
-  width: 80%;
+  max-width: 35%;
   margin: 0 auto;
+  height: 79vh;
 }
 
 .carousel__image {
@@ -486,14 +455,12 @@ SOME TEST STYLING FOR ROOMS START
   display: none;
 }
 
-@media (min-width: 650px) {
-  .carousel {
-    display: none;
-  }
+/*********************************
+SEACRH PAGE STARTS HERE
+**********************************/
+.search {
+  // Sara writes code here
 }
-
-@media (max-width: 650px) {
-  #desktop {
-    display: none;
-  }
-}
+/*********************************
+SEACRH PAGE ENDS HERE
+**********************************/

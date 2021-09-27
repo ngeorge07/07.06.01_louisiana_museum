@@ -408,70 +408,19 @@ IT ENDS HERE
 /*********************************
 SOME TEST STYLING FOR ROOMS START
 **********************************/
-#desktop {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: auto 1fr;
-      grid-template-rows: auto 1fr;
-  max-width: 80%;
-  margin: auto;
-  -webkit-column-gap: 5rem;
-          column-gap: 5rem;
-}
-
-#desktop h1 {
+.rooms h1 {
   grid-column: 1/-1;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
-  -ms-grid-column-align: center;
-      justify-self: center;
-}
-
-#desktop img {
-  width: 100%;
-}
-
-#desktop .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  grid-row: 2/-1;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
-}
-
-#desktop .card:nth-child(2) {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-#desktop .card:nth-child(3) {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-#desktop .card:nth-child(4) {
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-column: 3/4;
 }
 
 .carousel {
   position: relative;
-  height: 600px;
-  width: 80%;
+  max-width: 35%;
   margin: 0 auto;
+  height: 79vh;
 }
 
 .carousel__image {
@@ -567,15 +516,10 @@ SOME TEST STYLING FOR ROOMS START
   display: none;
 }
 
-@media (min-width: 650px) {
-  .carousel {
-    display: none;
-  }
-}
-
-@media (max-width: 650px) {
-  #desktop {
-    display: none;
-  }
-}
+/*********************************
+SEACRH PAGE STARTS HERE
+**********************************/
+/*********************************
+SEACRH PAGE ENDS HERE
+**********************************/
 /*# sourceMappingURL=test.css.map */

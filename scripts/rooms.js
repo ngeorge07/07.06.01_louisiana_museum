@@ -8,12 +8,13 @@ function addCarousel() {
   const dots = Array.from(dotsNav.children);
 
   const slideWidth = slides[0].getBoundingClientRect().width;
-  // console.log(slideSize);
 
   // set slides positions
-  slides.forEach((slide, index) => {
+  function setSlidePosition(slide, index) {
     slide.style.left = slideWidth * index + "px";
-  });
+    console.log(slide);
+  }
+  slides.forEach(setSlidePosition);
 
   function moveToSlide(track, currentSlide, targetSlide) {
     track.style.transform = "translateX(-" + targetSlide.style.left + ")";
