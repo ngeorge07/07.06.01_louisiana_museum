@@ -12,7 +12,7 @@ function addCarousel() {
   // set slides positions
   function setSlidePosition(slide, index) {
     slide.style.left = slideWidth * index + "px";
-    console.log(slide);
+    console.log(slide.style.left);
   }
   slides.forEach(setSlidePosition);
 
