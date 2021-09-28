@@ -236,7 +236,7 @@ IT BEGINS HERE
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-  height: 100vh;
+  height: 91vh;
   font: 900 2em cookie;
   margin: 0;
   color: white;
@@ -549,6 +549,8 @@ SOME TEST STYLING FOR ROOMS START
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  will-change: transform;
+  transition: transform 0.3s ease-out;
   cursor: -webkit-grab;
   cursor: grab;
   font: var(--akkurat);
@@ -625,7 +627,7 @@ SOME TEST STYLING FOR ROOMS START
 }
 
 .room-desc {
-  max-width: 80%;
+  max-width: 89%;
   margin: 2.8rem auto;
   display: -webkit-box;
   display: -ms-flexbox;

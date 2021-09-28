@@ -1,12 +1,10 @@
-// let tl = gsap.timeline();
-
 barba.init({
   views: [
     {
       namespace: "rooms",
       afterEnter({ next }) {
         let script = document.createElement("script");
-        script.src = "/scripts/rooms.js";
+        script.src = "scripts/rooms.js";
         next.container.appendChild(script);
       },
     },
