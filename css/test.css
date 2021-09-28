@@ -3,8 +3,9 @@ VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************/
 :root {
-  --shadow: rgba(0, 0, 0, 0.8);
   --gotham: normal 700 1rem gotham, normal;
+  --akkurat: normal 400 1rem akkurat, normal;
+  --nav-links-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 #container {
@@ -59,6 +60,11 @@ footer ul {
   padding: 2rem;
 }
 
+footer ul li {
+  font: var(--akkurat);
+  font-size: var(--nav-links-size);
+}
+
 footer a {
   pointer-events: auto;
   -webkit-transition: color 200ms 400ms;
@@ -97,10 +103,8 @@ IT STARTS HERE
   list-style: none;
   gap: 3rem;
   padding: 0;
-  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-family: "akkurat";
-  font-weight: normal;
-  font-style: normal;
+  font: var(--akkurat);
+  font-size: var(--nav-links-size);
   margin: 0;
 }
 
@@ -171,6 +175,9 @@ nav li .external {
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
   grid-column-gap: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav li .lefty {
@@ -235,8 +242,9 @@ IT BEGINS HERE
   color: white;
 }
 
-.index .split h3 {
-  font: --shadow;
+.index .split h2 {
+  font: var(--gotham);
+  color: white;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -252,9 +260,7 @@ IT BEGINS HERE
 }
 
 .index .split p {
-  font-family: "gotham";
-  font-weight: normal;
-  font-style: normal;
+  font: var(--gotham);
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
@@ -271,9 +277,7 @@ IT BEGINS HERE
 }
 
 .index .split a {
-  font-family: "akkurat";
-  font-weight: normal;
-  font-style: normal;
+  font: var(--akkurat);
   font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
   display: -webkit-box;
   display: -ms-flexbox;
@@ -542,9 +546,7 @@ SOME TEST STYLING FOR ROOMS START
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   cursor: -webkit-grab;
   cursor: grab;
-  font-family: "gotham";
-  font-weight: normal;
-  font-style: normal;
+  font: var(--gotham);
 }
 
 .rooms-grid {
