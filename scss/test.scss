@@ -4,6 +4,7 @@ VERY IMPORTANT STUFF DO NOT TOUCH
 **********************************/
 :root {
   --shadow: rgba(0, 0, 0, 0.8);
+  --gotham: normal 700 1rem gotham, normal;
 }
 
 #container {
@@ -67,6 +68,9 @@ nav {
   max-width: 90%;
 
   li {
+    &.hidden {
+      display: none;
+    }
     a {
       pointer-events: auto;
       transition: color 200ms 400ms;
@@ -146,9 +150,10 @@ IT BEGINS HERE
     color: white;
 
     h3 {
-      font-family: "gotham";
-      font-weight: normal;
-      font-style: normal;
+      // font-family: "gotham";
+      // font-weight: normal;
+      // font-style: normal;
+      font: --shadow;
       grid-row: 1/2;
       grid-column: 1/-1;
       align-self: end;
@@ -328,6 +333,9 @@ IT STARTS HERE
       .lefty {
         margin-left: 0;
       }
+      &.hidden {
+        display: initial;
+      }
     }
   }
 
@@ -366,11 +374,6 @@ IT ENDS HERE
 SOME TEST STYLING FOR ROOMS START
 **********************************/
 .rooms {
-  h1 {
-    grid-column: 1/-1;
-    grid-row: 1/2;
-    text-align: center;
-  }
   overflow-x: hidden;
 
   a::after {
@@ -436,6 +439,26 @@ SOME TEST STYLING FOR ROOMS START
   font-style: normal;
 }
 
+.rooms-grid {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-height: 75%;
+  h1 {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    z-index: 1;
+    font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1600 - 300)));
+    letter-spacing: 3px;
+    color: white;
+  }
+  img {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+  }
+}
+
 .slide {
   width: 100vw;
   height: 90%;
@@ -490,6 +513,7 @@ SOME TEST STYLING FOR ROOMS START
     .room-desc {
       max-width: 40%;
       margin: 1.5rem auto;
+      font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
     }
   }
 }
