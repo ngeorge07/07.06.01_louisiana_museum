@@ -236,7 +236,7 @@ IT BEGINS HERE
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-  height: 100vh;
+  height: 91vh;
   font: 900 2em cookie;
   margin: 0;
   color: white;
@@ -650,8 +650,6 @@ SOME TEST STYLING FOR ROOMS START
   }
   .slide .room-desc {
     max-width: 40%;
-    margin: 1.5rem auto;
-    font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
   }
 }
 

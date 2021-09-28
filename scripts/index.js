@@ -6,7 +6,7 @@ barba.init({
       namespace: "rooms",
       afterEnter({ next }) {
         let script = document.createElement("script");
-        script.src = "/scripts/rooms.js";
+        script.src = "scripts/rooms.js";
         next.container.appendChild(script);
       },
     },
@@ -14,7 +14,7 @@ barba.init({
 
   transitions: [
     {
-      name: "right-to-left",
+      name: "right-to-right",
       from: {
         namespace: ["home", "page2"],
       },
@@ -26,19 +26,19 @@ barba.init({
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,
-          x: "-100vw",
+          x: "100vw",
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
-          x: "100vw",
+          x: "-100vw",
         });
       },
     },
 
     {
-      name: "left-to-right",
+      name: "left-to-left",
       from: {
         namespace: ["home", "rooms"],
       },
@@ -49,13 +49,13 @@ barba.init({
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,
-          x: "100vw",
+          x: "-100vw",
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
-          x: "-100vw",
+          x: "100vw",
         });
       },
     },
