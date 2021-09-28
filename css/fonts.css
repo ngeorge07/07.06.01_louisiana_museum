@@ -2,3 +2,8 @@
   font-family: "gotham";
   src: url("../fonts/Gotham-Black.otf");
 }
+
+@font-face {
+  font-family: "akkurat";
+  src: url("../fonts/FontsFree-Net-Akkurat.ttf");
+}
