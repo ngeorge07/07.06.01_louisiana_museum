@@ -25,10 +25,10 @@
             alt="louisiana logo"
         /></a>
 
-        <ul class="nav-links">
+        <ul class="nav-links nav-hidden nav-hidden-move">
           <li class="nav__item"><a href="index.html">Rooms</a></li>
           <li class="nav__item"><a href="search.html">Collection</a></li>
-          <li class="nav__item"><a href="/pages/page3.html">Search</a></li>
+          <li class="nav__item"><a href="rooms.html">Search</a></li>
           <li class="nav__item">
             <a href="/pages/page4.html" class="external"
               >Louisiana channel
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li class="nav__item">
-            <a href="/pages/page4.html" class="external lefty"
+            <a href="search.html" class="external lefty"
               >Website
               <svg
                 aria-hidden="true"
@@ -101,85 +101,128 @@
 
     <div id="container">
       <main data-barba="container" data-barba-namespace="rooms" class="rooms">
-        <section class="carousel">
-          <h1>Explore Rooms</h1>
-          <button class="carousel__button carousel__button--left is-hidden">
-            <svg
-              id="Layer_1"
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 35.73 29.69"
-            >
-              <title>arrow left</title>
-              <polygon
-                points="14.8 29.69 16.85 27.64 5.53 16.25 35.73 16.25 35.73 13.35 5.54 13.35 16.84 2.05 14.79 0 0 14.8 14.8 29.69"
-              />
-            </svg>
-          </button>
-          <div class="carousel__track-container">
-            <ul class="carousel__track">
-              <li class="carousel__slide current-slide">
-                <img
-                  src="assets/background_img_contact.jpg"
-                  alt=""
-                  class="carousel__image"
-                />
+        <section class="slider-container">
+          <div class="slide current-slide">
+            <img
+              src="https://louisiana.dk/wp-content/uploads/2020/10/5022-Mamma-Andersson-960x1300.jpg"
+              alt=""
+            />
+            <div class="room-desc">
+              <div class="pbuttons first">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris nibh pellentesque mattis feugiat mi non.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                  eaque similique, neque cum est reiciendis explicabo vitae.
+                  Dolor laborum deserunt quisquam distinctio. Aliquid,
+                  recusandae velit molestias culpa veniam officia quae.
                 </p>
-                <a href="#">explore</a>
-              </li>
-              <li class="carousel__slide">
-                <img
-                  src="assets/background_img_contact.jpg"
-                  alt=""
-                  class="carousel__image"
-                />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris nibh pellentesque mattis feugiat mi non.
-                </p>
-                <a href="#">explore</a>
-              </li>
-              <li class="carousel__slide">
-                <img
-                  src="assets/background_img_contact.jpg"
-                  alt=""
-                  class="carousel__image"
-                />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Mauris nibh pellentesque mattis feugiat mi non.
-                </p>
-                <a href="#">explore</a>
-              </li>
-            </ul>
-          </div>
-          <button class="carousel__button carousel__button--right">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="arrow-right"
-              class="svg-inline--fa fa-arrow-right fa-w-14"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-            >
-              <path
-                fill="currentColor"
-                d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
-              ></path>
-            </svg>
-          </button>
 
-          <div class="carousel__nav">
-            <button class="carousel__indicator current-slide"></button>
-            <button class="carousel__indicator"></button>
-            <button class="carousel__indicator"></button>
+                <button class="carousel__button carousel__button--right">
+                  <svg
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 35.73 29.69"
+                  >
+                    <title>arrow right</title>
+                    <polygon
+                      points="20.92 0 18.88 2.06 30.2 13.44 0 13.44 0 16.34 30.18 16.34 18.88 27.64 20.93 29.69 35.73 14.89 20.92 0"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <a href="#" class="btn">Explore room</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://louisiana.dk/wp-content/uploads/2020/10/20_KMA1303-960x1000.jpg"
+              alt=""
+            />
+            <div class="room-desc">
+              <div class="pbuttons">
+                <button
+                  class="carousel__button carousel__button--left is-hidden"
+                >
+                  <svg
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 35.73 29.69"
+                  >
+                    <title>arrow left</title>
+                    <polygon
+                      points="14.8 29.69 16.85 27.64 5.53 16.25 35.73 16.25 35.73 13.35 5.54 13.35 16.84 2.05 14.79 0 0 14.8 14.8 29.69"
+                    />
+                  </svg>
+                </button>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                  eaque similique, neque cum est reiciendis explicabo vitae.
+                  Dolor laborum deserunt quisquam distinctio. Aliquid,
+                  recusandae velit molestias culpa veniam officia quae.
+                </p>
+
+                <button class="carousel__button carousel__button--right">
+                  <svg
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 35.73 29.69"
+                  >
+                    <title>arrow right</title>
+                    <polygon
+                      points="20.92 0 18.88 2.06 30.2 13.44 0 13.44 0 16.34 30.18 16.34 18.88 27.64 20.93 29.69 35.73 14.89 20.92 0"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <a href="#" class="btn">Explore room</a>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://louisiana.dk/wp-content/uploads/2020/10/44_KMA1907a-960x722.jpg"
+              alt=""
+            />
+            <div class="room-desc">
+              <div class="pbuttons last">
+                <button
+                  class="carousel__button carousel__button--left is-hidden"
+                >
+                  <svg
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 35.73 29.69"
+                  >
+                    <title>arrow left</title>
+                    <polygon
+                      points="14.8 29.69 16.85 27.64 5.53 16.25 35.73 16.25 35.73 13.35 5.54 13.35 16.84 2.05 14.79 0 0 14.8 14.8 29.69"
+                    />
+                  </svg>
+                </button>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                  eaque similique, neque cum est reiciendis explicabo vitae.
+                  Dolor laborum deserunt quisquam distinctio. Aliquid,
+                  recusandae velit molestias culpa veniam officia quae.
+                </p>
+              </div>
+
+              <a href="#" class="btn">Explore room</a>
+            </div>
           </div>
         </section>
+
+        <!-- <div class="carousel__nav">
+          <button class="carousel__indicator current-slide"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+        </div> -->
       </main>
     </div>
     <script src="./scripts/index.js"></script>

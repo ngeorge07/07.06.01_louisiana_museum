@@ -68,20 +68,43 @@ function navSlide() {
   const nav = document.querySelector(".nav-links");
   const navLinks = document.querySelectorAll(".nav-links li");
 
-  burger.addEventListener("click", () => {
-    console.log("ana");
-    nav.classList.toggle("nav-active");
-    burger.classList.toggle("move");
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
+  burger.addEventListener(
+    "click",
+    () => {
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`;
+        }
+      });
+      console.log("ana");
+      burger.classList.toggle("move");
+
+      if (nav.classList.contains("nav-hidden")) {
+        nav.classList.remove("nav-hidden");
+        setTimeout(function () {
+          nav.classList.remove("nav-hidden-move");
+        }, 20);
       } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 7 + 0.3
-        }s`;
+        nav.classList.add("nav-hidden-move");
+        nav.addEventListener(
+          "transitionend",
+          function (e) {
+            nav.classList.add("nav-hidden");
+          },
+          {
+            capture: false,
+            once: true,
+            passive: false,
+          }
+        );
       }
-    });
-  });
+    },
+    false
+  );
 }
 
 navSlide();

@@ -2,6 +2,10 @@
 VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************/
+:root {
+  --shadow: rgba(0, 0, 0, 0.8);
+}
+
 #container {
   display: grid;
 }
@@ -10,15 +14,10 @@ VERY IMPORTANT STUFF DO NOT TOUCH
   grid-column: 1/-1;
 }
 
-body,
-html {
-  margin: 0;
-}
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /*********************************
@@ -200,10 +199,13 @@ IT BEGINS HERE
 
       svg {
         padding-right: 0.5rem;
-        width: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
-        filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
-          brightness(109%) contrast(101%);
       }
+    }
+
+    svg {
+      width: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
+      filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
+        brightness(109%) contrast(101%);
     }
 
     a:nth-child(4) {
@@ -216,8 +218,6 @@ IT BEGINS HERE
 
       svg {
         padding-left: 0.5rem;
-        width: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
-        color: white;
       }
     }
   }
@@ -301,24 +301,23 @@ MEDIA QUERIE FOR BURGER MENU BELOW
 IT STARTS HERE
 **********************************/
 @media only screen and (max-width: 1110px) {
-  body {
-    overflow-x: hidden;
-  }
-
   /* burger menu visible */
   .nav-links {
     position: absolute;
     right: 0px;
     top: 9vh;
     height: 85vh;
-    width: 40%;
+    width: 60%;
     background-color: white;
     z-index: 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    transform: translateX(0%);
+    transition: all 0.5s ease-in;
 
     li {
       opacity: 0;
@@ -327,8 +326,13 @@ IT STARTS HERE
       }
     }
   }
-  .nav-active {
-    transform: translateX(0%);
+
+  .nav-hidden {
+    display: none;
+  }
+
+  .nav-hidden-move {
+    transform: translateX(100%);
   }
 
   .burger {
@@ -348,11 +352,6 @@ IT STARTS HERE
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .nav-active {
-    width: 80%;
-  }
-}
 /*********************************
 MEDIA QUERIE FOR BURGER MENU ABOVE
 
@@ -368,50 +367,27 @@ SOME TEST STYLING FOR ROOMS START
     grid-row: 1/2;
     text-align: center;
   }
-}
+  overflow-x: hidden;
 
-.carousel {
-  position: relative;
-  max-width: 90%;
-  margin: 0 auto;
-  height: 79vh;
-}
+  a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    position: relative;
+    background-color: currentColor;
+    transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+  }
 
-.carousel__image {
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
-}
-
-.carousel__track-container {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel__track {
-  list-style: none;
-  list-style: none;
-  position: relative;
-  height: 100%;
-  transition: transform 250ms ease-in;
-}
-
-.carousel__slide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
+  a:hover::after {
+    width: 0;
+  }
 }
 
 .carousel__button {
-  position: absolute;
   transform: translateY(-50%);
-  top: 50%;
+
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -422,37 +398,96 @@ SOME TEST STYLING FOR ROOMS START
 }
 
 .carousel__button--left {
-  left: -40px;
+  margin-right: 1.5rem;
 }
 
 .carousel__button--right {
-  right: -40px;
+  margin-left: 1.5rem;
 }
 
-.carousel__nav {
-  // background: pink;
+.pbuttons {
   display: flex;
-  justify-content: center;
-  padding: 10px 0;
-  margin-top: 1.5rem;
+  align-items: center;
+
+  &.first {
+    margin-left: 2.5rem;
+  }
+
+  &.last {
+    margin-right: 2.5rem;
+  }
 }
 
-.carousel__indicator {
-  border: 0;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  background: rgba(0, 0, 0, 0.3);
-  margin: 0 12px;
-  cursor: pointer;
+.slider-container {
+  height: 91vh;
+
+  display: inline-flex;
+  // overflow: hidden;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+  cursor: grab;
+
+  font-family: "gotham";
+  font-weight: normal;
+  font-style: normal;
 }
 
-.carousel__indicator.current-slide {
-  background: rgba(0, 0, 0, 0.75);
+.slide {
+  width: 100vw;
+  height: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  .btn {
+    color: black;
+    text-decoration: none;
+    margin: 1rem;
+  }
+
+  .grabbing {
+    cursor: grabbing;
+  }
 }
 
-.is-hidden {
-  display: none;
+.room-desc {
+  max-width: 80%;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.slide .grabbing .slide img {
+  transform: scale(0.9);
+}
+
+@media only screen and (min-width: 800px) {
+  .slide {
+    img {
+      max-width: 55%;
+    }
+
+    .room-desc {
+      max-width: 40%;
+      margin: 1.5rem auto;
+    }
+  }
 }
 
 /*********************************
