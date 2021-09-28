@@ -525,6 +525,11 @@ SOME TEST STYLING FOR ROOMS START
           align-items: center;
 }
 
+.pbuttons a {
+  font-size: var(--nav-links-size);
+  font: var(--akkurat);
+}
+
 .pbuttons.first {
   margin-left: 2.5rem;
 }
@@ -546,7 +551,7 @@ SOME TEST STYLING FOR ROOMS START
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   cursor: -webkit-grab;
   cursor: grab;
-  font: var(--gotham);
+  font: var(--akkurat);
 }
 
 .rooms-grid {
@@ -564,6 +569,7 @@ SOME TEST STYLING FOR ROOMS START
   grid-row: 1/-1;
   grid-column: 1/-1;
   z-index: 1;
+  font: var(--gotham);
   font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1600 - 300)));
   letter-spacing: 3px;
   color: white;
@@ -596,7 +602,7 @@ SOME TEST STYLING FOR ROOMS START
 
 .slide img {
   width: 100%;
-  max-height: 75%;
+  height: 60vh;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -620,7 +626,7 @@ SOME TEST STYLING FOR ROOMS START
 
 .room-desc {
   max-width: 80%;
-  margin: 1.5rem auto;
+  margin: 2.8rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -631,10 +637,6 @@ SOME TEST STYLING FOR ROOMS START
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.room-desc p {
-  margin-bottom: 1rem;
 }
 
 .slide .grabbing .slide img {
