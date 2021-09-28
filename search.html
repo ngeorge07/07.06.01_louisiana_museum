@@ -90,11 +90,20 @@
     <div id="container">
       <main data-barba="container" data-barba-namespace="page2" class="search">
         <h1>SEARCH</h1>
-        <section>
-          <p>What are you looking for?</p>
-          <img src="assets/search.png" alt="search icon" />
+        <section id="search-con">
+          <form action="#">
+            <label for="fname"></label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              placeholder="What are you looking for?"
+            /><br /><br />
+          </form>
+
           <svg
-            id="Layer_1"
+            class="arrow"
+            id="arrow-right"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 35.73 29.69"
@@ -105,9 +114,9 @@
             />
           </svg>
         </section>
-        <section>
+        <section id="back-button">
           <svg
-            id="Layer_1"
+            id="arrow-left"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 35.73 29.69"
