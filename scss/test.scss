@@ -35,7 +35,7 @@ IT STARTS HERE
   list-style: none;
   gap: 3rem;
   padding: 0;
-  font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
   font-family: "akkurat";
   font-weight: normal;
   font-style: normal;
@@ -172,10 +172,10 @@ IT BEGINS HERE
     }
 
     a {
-      font-family: "gotham";
+      font-family: "akkurat";
       font-weight: normal;
       font-style: normal;
-      font-size: calc(22px + (35 - 22) * ((100vw - 300px) / (1600 - 300)));
+      font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
       display: flex;
       align-items: flex-end;
       padding-bottom: 7rem;
@@ -257,6 +257,8 @@ IT STARS HERE
         background-color: currentColor;
 
         transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+        position: relative;
+        bottom: 3px;
       }
 
       a:nth-child(3):hover:after {
@@ -275,6 +277,8 @@ IT STARS HERE
         height: 1px;
         background-color: currentColor;
         transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+        position: relative;
+        bottom: 3px;
       }
 
       a:nth-child(4):hover:before {
