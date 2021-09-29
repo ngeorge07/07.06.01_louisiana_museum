@@ -35,13 +35,13 @@ barba.init({
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,
-          x: "-100vw",
+          x: "100vw",
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
-          x: "100vw",
+          x: "-100vw",
         });
       },
     },
@@ -56,13 +56,13 @@ barba.init({
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,
-          x: "100vw",
+          x: "-100vw",
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
-          x: "-100vw",
+          x: "100vw",
         });
       },
     },
@@ -81,13 +81,13 @@ barba.init({
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,
-          x: "100vw",
+          x: "-100vw",
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
-          x: "-100vw",
+          x: "100vw",
         });
       },
     },
@@ -102,13 +102,13 @@ barba.init({
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,
-          x: "-100vw",
+          x: "100vw",
         });
       },
       enter(data) {
         return gsap.from(data.next.container, {
           opacity: 0,
-          x: "100vw",
+          x: "-100vw",
         });
       },
     },
