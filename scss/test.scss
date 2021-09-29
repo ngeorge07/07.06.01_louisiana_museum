@@ -559,7 +559,7 @@ SOME TEST STYLING FOR ROOMS START
     height: 90%;
     display: grid;
     grid-template-rows: 1fr auto;
-    flex-direction: column;
+
     align-items: center;
     justify-items: center;
     user-select: none;
@@ -580,6 +580,18 @@ SOME TEST STYLING FOR ROOMS START
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+.art-arrows {
+  margin-top: 1.3rem;
+  margin-left: calc(200px + (350 - 200) * ((100vw - 300px) / (1600 - 300)));
+  svg {
+    width: 1.5rem;
+  }
+
+  svg:first-child {
+    margin-right: 0.5rem;
   }
 }
 
