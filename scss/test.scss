@@ -6,7 +6,7 @@ VERY IMPORTANT STUFF DO NOT TOUCH
   --gotham: normal 700 1rem gotham, normal;
   --akkurat: normal 400 1rem akkurat, normal;
   --nav-links-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
-  --akkurat-bold: normal 550 1rem akkurat-bold, normal;
+  --akkurat-bold: normal 600 1rem akkurat-bold, normal;
 }
 
 .bold {
@@ -222,10 +222,11 @@ IT BEGINS HERE
     p {
       font: var(--gotham);
       grid-row: 2/3;
-      grid-column: 2/3;
+      grid-column: 1/2;
       z-index: 1;
+      justify-self: end;
       align-self: start;
-      padding-left: 2.5rem;
+      padding-right: 2.5rem;
       margin: 0;
       font-size: calc(22px + (50 - 22) * ((100vw - 300px) / (1600 - 300)));
     }
@@ -239,7 +240,7 @@ IT BEGINS HERE
       color: white;
     }
 
-    a:nth-child(3) {
+    a:nth-child(4) {
       background: url("https://louisiana.dk/wp-content/uploads/2020/10/3_KMA0508-960x736.jpg");
       background-repeat: no-repeat;
       background-size: cover;
@@ -247,7 +248,7 @@ IT BEGINS HERE
       padding-left: 3rem;
 
       grid-row: 1/-1;
-      grid-column: 1/2;
+      grid-column: 2/3;
 
       svg {
         padding-right: 0.5rem;
@@ -260,13 +261,13 @@ IT BEGINS HERE
         brightness(109%) contrast(101%);
     }
 
-    a:nth-child(4) {
+    a:nth-child(3) {
       background-color: black;
       text-align: right;
       padding-right: 3rem;
       justify-content: right;
       grid-row: 1/-1;
-      grid-column: 2/3;
+      grid-column: 1/2;
 
       svg {
         padding-left: 0.5rem;
@@ -631,6 +632,7 @@ SEACRH PAGE STARTS HERE
   justify-content: space-around;
 
   input {
+    text-align: center;
     width: 50vw;
     height: 3vw;
     border: none;
@@ -679,8 +681,8 @@ SEACRH PAGE STARTS HERE
 
   #back-button {
     display: flex;
-    align-self: flex-start;
-    padding-left: 3vw;
+    align-self: flex-end;
+    padding-right: 3vw;
 
     a {
       pointer-events: auto;
@@ -709,8 +711,8 @@ SEACRH PAGE STARTS HERE
       width: 0;
     }
 
-    #arrow-left {
-      margin-right: 0.7vw;
+    .arrow-back {
+      margin-left: 0.7vw;
     }
   }
 }
