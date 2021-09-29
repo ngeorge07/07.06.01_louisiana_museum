@@ -437,6 +437,35 @@ SOME TEST STYLING FOR ROOMS START
   a:hover::after {
     width: 0;
   }
+  .slide {
+    width: 100vw;
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+
+    img {
+      width: 100%;
+      // height: 100%;
+      height: 60vh;
+      transition: transform 0.3s ease-in-out;
+      object-fit: cover;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+
+    .btn {
+      color: black;
+      text-decoration: none;
+      margin: 1rem;
+    }
+  }
+}
+
+.grabbing {
+  cursor: grabbing;
 }
 
 .carousel__button {
@@ -510,33 +539,26 @@ SOME TEST STYLING FOR ROOMS START
   }
 }
 
-.slide {
-  width: 100vw;
-  height: 90%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  user-select: none;
+.collection {
+  overflow-x: hidden;
+  .slide {
+    width: 100vw;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
 
-  img {
-    width: 100%;
-    // height: 100%;
-    height: 60vh;
-    transition: transform 0.3s ease-in-out;
-    object-fit: cover;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    img {
+      width: 36%;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
   }
 
-  .btn {
-    color: black;
-    text-decoration: none;
-    margin: 1rem;
-  }
-
-  .grabbing {
-    cursor: grabbing;
+  .art-desc {
+    justify-self: flex-start;
   }
 }
 
@@ -546,6 +568,18 @@ SOME TEST STYLING FOR ROOMS START
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+
+  .swipe {
+    margin-top: 1rem;
+    opacity: 0.9;
+    display: flex;
+    svg {
+      width: 1rem;
+      margin-left: 0.5rem;
+      align-self: end;
+    }
+  }
 }
 
 .slide .grabbing .slide img {
@@ -553,14 +587,13 @@ SOME TEST STYLING FOR ROOMS START
 }
 
 @media only screen and (min-width: 800px) {
-  .slide {
+  .rooms {
     img {
       max-width: 55%;
     }
 
     .room-desc {
       max-width: 40%;
-      // font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
     }
   }
 }

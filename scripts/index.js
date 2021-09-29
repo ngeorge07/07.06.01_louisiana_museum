@@ -10,6 +10,14 @@ barba.init({
         next.container.appendChild(script);
       },
     },
+    {
+      namespace: "collection",
+      afterEnter({ next }) {
+        let script = document.createElement("script");
+        script.src = "scripts/rooms.js";
+        next.container.appendChild(script);
+      },
+    },
   ],
 
   transitions: [
