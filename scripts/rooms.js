@@ -91,3 +91,23 @@ function addCarousel() {
 }
 
 addCarousel();
+
+// buttons declared
+
+// const buttonright = document.querySelector(".carousel__button--right");
+// const buttonleft = document.querySelector(".carousel__button--left");
+// const slider = document.querySelector(".slider-container");
+
+// //add event
+// buttonright.addEventListener("click", buttonRightClicked);
+// buttonleft.addEventListener("click", buttonLeftClicked);
+
+// // // functions
+
+// function buttonRightClicked() {
+//   console.log("button-right-clicked");
+//   isgrabbing = false;
+//   slider.style.transform = "translateX(-1440px)"
+// }
+
+///////////////////////
