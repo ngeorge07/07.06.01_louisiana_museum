@@ -249,6 +249,7 @@ IT BEGINS HERE
 
 .index .split h2 {
   font: var(--gotham);
+  z-index: 1;
   color: white;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -259,7 +260,6 @@ IT BEGINS HERE
       align-self: end;
   -ms-grid-column-align: center;
       justify-self: center;
-  mix-blend-mode: difference;
   margin: 0;
   font-size: calc(55px + (100 - 55) * ((100vw - 300px) / (1600 - 300)));
 }
@@ -273,11 +273,11 @@ IT BEGINS HERE
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   z-index: 1;
-  -ms-grid-column-align: end;
-      justify-self: end;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
+  -ms-grid-column-align: end;
+      justify-self: end;
   padding-right: 2.5rem;
   margin: 0;
   font-size: calc(22px + (50 - 22) * ((100vw - 300px) / (1600 - 300)));
