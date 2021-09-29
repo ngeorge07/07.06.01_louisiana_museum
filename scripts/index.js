@@ -22,13 +22,35 @@ barba.init({
 
   transitions: [
     {
-      name: "right-to-right",
+      name: "collection-to-rooms",
+
       from: {
-        namespace: ["home", "page2"],
+        namespace: ["collection"],
       },
 
       to: {
-        namespace: ["rooms", "home"],
+        namespace: ["rooms"],
+      },
+
+      leave(data) {
+        return gsap.to(data.current.container, {
+          opacity: 0,
+          x: "-100vw",
+        });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, {
+          opacity: 0,
+          x: "100vw",
+        });
+      },
+    },
+
+    {
+      name: "rooms-to-collection",
+
+      to: {
+        namespace: ["collection"],
       },
 
       leave(data) {
@@ -46,14 +68,37 @@ barba.init({
     },
 
     {
-      name: "left-to-left",
+      name: "left-to-right",
+
       from: {
-        namespace: ["home", "rooms"],
+        namespace: ["search", "home"],
       },
 
       to: {
-        namespace: ["page2", "home"],
+        namespace: ["home", "rooms"],
       },
+
+      leave(data) {
+        return gsap.to(data.current.container, {
+          opacity: 0,
+          x: "100vw",
+        });
+      },
+      enter(data) {
+        return gsap.from(data.next.container, {
+          opacity: 0,
+          x: "-100vw",
+        });
+      },
+    },
+
+    {
+      name: "right-to-left",
+
+      to: {
+        namespace: ["search", "home"],
+      },
+
       leave(data) {
         return gsap.to(data.current.container, {
           opacity: 0,

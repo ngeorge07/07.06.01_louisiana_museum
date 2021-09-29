@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "akkurat-bold";
+  src: url("../fonts/FontsFree-Net-Akkurat-Bold.ttf");
+}
+
+@font-face {
   font-family: "akkurat";
   src: url("../fonts/FontsFree-Net-Akkurat.ttf");
 }
