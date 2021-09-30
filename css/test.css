@@ -302,6 +302,9 @@ IT BEGINS HERE
   background-size: cover;
   background-position: center;
   padding-left: 3rem;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   grid-row: 1/-1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -657,7 +660,7 @@ SOME TEST STYLING FOR ROOMS START
 }
 
 .collection .slide img {
-  width: 340px;
+  width: calc(300px + (350 - 300) * ((100vw - 300px) / (1600 - 300)));
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -673,7 +676,7 @@ SOME TEST STYLING FOR ROOMS START
 }
 
 .collection .art-desc {
-  width: calc(300px + (400 - 300) * ((100vw - 300px) / (1600 - 300)));
+  width: calc(300px + (350 - 300) * ((100vw - 300px) / (1600 - 300)));
   margin-top: calc(0px + (35 - 0) * ((100vw - 300px) / (1600 - 300)));
   font-size: var(--nav-links-size);
   display: -webkit-box;
@@ -689,10 +692,6 @@ SOME TEST STYLING FOR ROOMS START
 
 .collection .last-slide img {
   width: calc(300px + (600 - 300) * ((100vw - 300px) / (1600 - 300)));
-}
-
-.collection .last-slide a {
-  margin-top: -5rem;
 }
 
 .last-slide {
