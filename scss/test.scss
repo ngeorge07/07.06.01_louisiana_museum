@@ -2,6 +2,16 @@
 VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::after,
+  *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 :root {
   --gotham: normal 400 1rem gotham-bold, normal;
   --akkurat: normal 400 1rem akkurat, normal;
