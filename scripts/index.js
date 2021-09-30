@@ -1,5 +1,3 @@
-// let tl = gsap.timeline();
-
 barba.init({
   views: [
     {
@@ -14,7 +12,7 @@ barba.init({
       namespace: "collection",
       afterEnter({ next }) {
         let script = document.createElement("script");
-        script.src = "scripts/rooms.js";
+        script.src = "scripts/collection.js";
         next.container.appendChild(script);
       },
     },

@@ -1,3 +1,60 @@
+function collection() {
+  const urlParams = new URLSearchParams(document.location.search.substring(1));
+  //   const urlParams = new URLSearchParams(window.location.search);
+  const theme = urlParams.get("theme");
+
+  let url;
+
+  if (theme === "all") {
+    url = "https://gnmmd2ndsemester-6f2a.restdb.io/rest/louisiana";
+  }
+  if (theme === "divein") {
+    url =
+      "https://gnmmd2ndsemester-6f2a.restdb.io/rest/louisiana?q=%7B%22theme%22%3A%20%22Dive%20in%22%7D";
+  } else if (theme === "openup") {
+    url =
+      "https://gnmmd2ndsemester-6f2a.restdb.io/rest/louisiana?q=%7B%22theme%22%3A%20%22Open%20up%22%7D";
+  } else if (theme === "relax") {
+    url =
+      "https://gnmmd2ndsemester-6f2a.restdb.io/rest/louisiana?q=%7B%22theme%22%3A%20%22Relax%22%7D";
+  }
+
+  const options = {
+    headers: {
+      "x-apikey": "6134eac643cedb6d1f97ecdd",
+    },
+  };
+  fetch(url, options)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      handleArt(data);
+    });
+  function handleArt(data) {
+    data.forEach((data) => {
+      const template = document.querySelector(".sliderTemplate").content;
+
+      //clone it
+      const clone = template.cloneNode(true);
+
+      // change content
+      clone.querySelector("svg:first-child").style.opacity = 0;
+      clone.querySelector("img").src = data.image_url;
+      clone.querySelector("h3").textContent = data.artist;
+      clone.querySelector("i").textContent = data.title;
+      clone.querySelector(".year").textContent = data.year;
+      clone.querySelector("p:last-of-type").textContent = data.technique;
+
+      //grab parent
+      const parent = document.querySelector(".slider-container");
+
+      //append
+      parent.appendChild(clone);
+    });
+  }
+}
+
 function addCarousel() {
   const slider = document.querySelector(".slider-container");
   const slides = Array.from(slider.children);
@@ -91,4 +148,6 @@ function addCarousel() {
   }
 }
 
-addCarousel();
+collection();
+
+setTimeout(addCarousel, 5000);
