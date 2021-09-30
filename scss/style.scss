@@ -1,7 +1,12 @@
 /*********************************
-VERY IMPORTANT STUFF DO NOT TOUCH
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+00.  IMPORTANT general information regarding barbajs, 
+accessability and variables
 **********************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -31,101 +36,17 @@ VERY IMPORTANT STUFF DO NOT TOUCH
   grid-column: 1/-1;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
+
+
+
+
+
+
 
 /*********************************
-VERY IMPORTANT STUFF DO NOT TOUCH
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+01. Header navigation
 **********************************/
-/*********************************
-FOOTER BEGINS HERE*/
-
-.nav__links .hidden {
-  display: none;
-}
-
-footer {
-  background: rgb(0, 0, 0);
-  svg {
-    width: calc(12px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
-    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
-      brightness(109%) contrast(101%);
-  }
-  ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    max-width: 70%;
-    margin: 0 auto;
-    align-self: center;
-    padding: 2rem;
-    li {
-      font: var(--akkurat);
-      font-size: var(--nav-links-size);
-    }
-  }
-  a {
-    pointer-events: auto;
-    transition: color 200ms 400ms;
-    text-decoration: none;
-
-    color: white;
-
-    transition-delay: 850ms;
-  }
-
-  a:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    bottom: 0px;
-    position: relative;
-    background-color: currentColor;
-
-    transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
-  }
-
-  a:hover:after {
-    width: 0;
-  }
-}
-
-/*********************************
-THE HEADER CSS IS BELOW
-
-IT STARTS HERE
-**********************************/
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 3rem;
-  padding: 0;
-  font: var(--akkurat);
-  font-size: var(--nav-links-size);
-
-  margin: 0;
-}
-
-.burger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  span {
-    display: inline-block;
-    width: 3px;
-    height: 30px;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-  }
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -185,6 +106,96 @@ nav {
   }
 }
 
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  padding: 0;
+  font: var(--akkurat);
+  font-size: var(--nav-links-size);
+
+  margin: 0;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    width: 3px;
+    height: 30px;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*********************************
+02. Footer navigation
+**********************************/
+footer {
+  background: rgb(0, 0, 0);
+  svg {
+    width: calc(12px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
+      brightness(109%) contrast(101%);
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    max-width: 70%;
+    margin: 0 auto;
+    align-self: center;
+    padding: 2rem;
+    li {
+      font: var(--akkurat);
+      font-size: var(--nav-links-size);
+    }
+  }
+  a {
+    pointer-events: auto;
+    transition: color 200ms 400ms;
+    text-decoration: none;
+
+    color: white;
+
+    transition-delay: 850ms;
+  }
+
+  a:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    position: relative;
+    background-color: currentColor;
+
+    transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
+  }
+
+  a:hover:after {
+    width: 0;
+  }
+}
+
+
+
+
+
+
+
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -196,16 +207,12 @@ nav {
   }
 }
 
-/*********************************
-THE HEADER FOR HOME PAGE CSS IS ABOVE
 
-IT ENDS HERE
-**********************************/
+
+
 
 /*********************************
-THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
-
-IT BEGINS HERE
+03. Home page
 **********************************/
 .index {
   .split {
