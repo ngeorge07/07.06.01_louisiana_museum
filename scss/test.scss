@@ -565,7 +565,8 @@ SOME TEST STYLING FOR ROOMS START
     user-select: none;
 
     img {
-      width: calc(300px + (400 - 300) * ((100vw - 300px) / (1600 - 300)));
+      // width: calc(300px + (400 - 300) * ((100vw - 300px) / (1600 - 300)));
+      width: 340px;
       transition: transform 0.3s ease-in-out;
       box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
         rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
