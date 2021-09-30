@@ -1,7 +1,6 @@
 function addCarousel() {
   const slider = document.querySelector(".slider-container");
   const slides = Array.from(slider.children);
-  console.log("rooms is running");
 
   let isDragging = false,
     startPos = 0,
