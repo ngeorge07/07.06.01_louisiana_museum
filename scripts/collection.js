@@ -1,8 +1,9 @@
 function collection() {
   const urlParams = new URLSearchParams(document.location.search.substring(1));
-  //   const urlParams = new URLSearchParams(window.location.search);
   const theme = urlParams.get("theme");
   let url;
+
+  // Test what page is the user coming in from and set the ul containing the data required
   if (theme === "all") {
     url = "https://gnmmd2ndsemester-6f2a.restdb.io/rest/louisiana";
   }
@@ -21,6 +22,8 @@ function collection() {
       "x-apikey": "6134eac643cedb6d1f97ecdd",
     },
   };
+
+  // fetch the data from the database
   fetch(url, options)
     .then(function (res) {
       return res.json();
@@ -28,13 +31,15 @@ function collection() {
     .then(function (data) {
       handleArt(data);
       document.querySelector(".last-slide").style.opacity = 1;
-      console.log("generate slides");
     });
   function handleArt(data) {
     data.forEach((data) => {
+      // grab template from DOM
       const template = document.querySelector(".sliderTemplate").content;
-      //clone it
+
+      //clone template
       const clone = template.cloneNode(true);
+
       // change content
       clone.querySelector("img").src = data.image_url;
       clone.querySelector("h3").textContent = data.artist;
@@ -45,17 +50,22 @@ function collection() {
       } else clone.querySelector(".year").textContent = data.year;
 
       clone.querySelector("p:last-of-type").textContent = data.technique;
-      //grab parent
+
+      //grab parent and the hardcoded last-slide that will the same for all collection pages
       const parent = document.querySelector(".slider-container");
       const last = parent.querySelector(".last-slide");
-      //append
+
+      //append clones before the last hardcoded slide
       parent.insertBefore(clone, last);
     });
+
+    // run carousel after the data request is done and the clone are appended to the DOM
     addCarousel();
   }
 }
+
+// make a carousel slider
 function addCarousel() {
-  console.log("carousel is running");
   const slider = document.querySelector(".slider-container");
   const slides = Array.from(slider.children);
   let isDragging = false,
