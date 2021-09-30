@@ -1,3 +1,4 @@
+// slide transitions between pages using barbajs
 barba.init({
   views: [
     {
@@ -113,7 +114,7 @@ barba.init({
   ],
 });
 
-// burger
+// animated burger menu
 function navSlide() {
   const burger = document.querySelector(".burger");
   const nav = document.querySelector(".nav-links");
@@ -131,7 +132,6 @@ function navSlide() {
           }s`;
         }
       });
-      console.log("ana");
       burger.classList.toggle("move");
 
       if (nav.classList.contains("nav-hidden")) {

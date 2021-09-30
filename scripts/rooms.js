@@ -1,3 +1,4 @@
+// make a carousel slider
 function addCarousel() {
   const slider = document.querySelector(".slider-container");
   const slides = Array.from(slider.children);
@@ -40,7 +41,6 @@ function addCarousel() {
       startPos = getPositionX(event);
       isDragging = true;
 
-      // https://css-tricks.com/using-requestanimationframe/
       animationID = requestAnimationFrame(animation);
       slider.classList.add("grabbing");
     };

@@ -1,7 +1,36 @@
 /*********************************
-VERY IMPORTANT STUFF DO NOT TOUCH
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TABLE OF CONTENTS
+
+  00........IMPORTANT general information regarding barbajs, accessability and variables
+  01........Header navigation
+  02........Footer navigation
+  03........Home page
+  04........Search page
+  05........Rooms and Collection
+    05.1........Rooms
+    05.2........Collection
+    05.3........Carousel
+
+  06........Keyframe
+  07........Media queries
+    07.1........Home page desktop view
+    07.2........Make burger menu, hide footer
+    07.3........Width changes in rooms pages
 **********************************/
+
+
+
+
+
+/*********************************
+00.  IMPORTANT general information regarding barbajs, 
+accessability and variables
+**********************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -17,6 +46,9 @@ VERY IMPORTANT STUFF DO NOT TOUCH
   --akkurat: normal 400 1rem akkurat, normal;
   --nav-links-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
   --akkurat-bold: normal 400 1rem akkurat-bold, normal;
+  --home-arrows-padding: 0.5rem;
+  --room-arrows-margin: 1.5rem;
+  --art-page-elem-widths: calc(300px + (340 - 300) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .bold {
@@ -26,106 +58,20 @@ VERY IMPORTANT STUFF DO NOT TOUCH
 #container {
   display: grid;
 }
+
 #container > main {
   grid-row: 1/-1;
   grid-column: 1/-1;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
+
+
+
 
 /*********************************
-VERY IMPORTANT STUFF DO NOT TOUCH
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+01. Header navigation
 **********************************/
-/*********************************
-FOOTER BEGINS HERE*/
-
-.nav__links .hidden {
-  display: none;
-}
-
-footer {
-  background: rgb(0, 0, 0);
-  svg {
-    width: calc(12px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
-    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
-      brightness(109%) contrast(101%);
-  }
-  ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    max-width: 70%;
-    margin: 0 auto;
-    align-self: center;
-    padding: 2rem;
-    li {
-      font: var(--akkurat);
-      font-size: var(--nav-links-size);
-    }
-  }
-  a {
-    pointer-events: auto;
-    transition: color 200ms 400ms;
-    text-decoration: none;
-
-    color: white;
-
-    transition-delay: 850ms;
-  }
-
-  a:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    bottom: 0px;
-    position: relative;
-    background-color: currentColor;
-
-    transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
-  }
-
-  a:hover:after {
-    width: 0;
-  }
-}
-
-/*********************************
-THE HEADER CSS IS BELOW
-
-IT STARTS HERE
-**********************************/
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 3rem;
-  padding: 0;
-  font: var(--akkurat);
-  font-size: var(--nav-links-size);
-
-  margin: 0;
-}
-
-.burger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-
-  span {
-    display: inline-block;
-    width: 3px;
-    height: 30px;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-  }
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -185,270 +131,71 @@ nav {
   }
 }
 
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  padding: 0;
+  font: var(--akkurat);
+  font-size: var(--nav-links-size);
+
+  margin: 0;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    width: 3px;
+    height: 30px;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
   }
 }
 
+
+
+
+
+
 /*********************************
-THE HEADER FOR HOME PAGE CSS IS ABOVE
-
-IT ENDS HERE
+02. Footer navigation
 **********************************/
+footer {
+  background: rgb(0, 0, 0);
+  svg {
+    width: calc(12px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
+      brightness(109%) contrast(101%);
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    max-width: 70%;
+    margin: 0 auto;
+    align-self: center;
+    padding: 2rem;
+    li {
+      font: var(--akkurat);
+      font-size: var(--nav-links-size);
+    }
+  }
+  a {
+    pointer-events: auto;
+    transition: color 200ms 400ms;
+    text-decoration: none;
 
-/*********************************
-THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
-
-IT BEGINS HERE
-**********************************/
-.index {
-  .split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 91vh;
-    font: 900 2em cookie;
-    margin: 0;
     color: white;
 
-    h2 {
-      font: var(--gotham);
-      z-index: 1;
-      color: white;
-      grid-row: 1/2;
-      grid-column: 1/-1;
-      align-self: end;
-      justify-self: center;
-      margin: 0;
-      font-size: calc(55px + (100 - 55) * ((100vw - 300px) / (1600 - 300)));
-    }
-
-    p {
-      font: var(--gotham);
-      grid-row: 2/3;
-      grid-column: 1/2;
-      z-index: 1;
-      align-self: start;
-      justify-self: end;
-      padding-right: 2.9rem;
-      margin: 0;
-      font-size: calc(22px + (50 - 22) * ((100vw - 300px) / (1600 - 300)));
-    }
-
-    a {
-      font: var(--akkurat);
-      font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 7rem;
-      color: white;
-    }
-
-    a:nth-child(4) {
-      background: url("https://louisiana.dk/wp-content/uploads/2020/10/3_KMA0508-960x736.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      padding-left: 3rem;
-      justify-content: left;
-
-      grid-row: 1/-1;
-      grid-column: 2/3;
-
-      svg {
-        padding-left: 0.5rem;
-      }
-    }
-
-    svg {
-      width: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
-      filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
-        brightness(109%) contrast(101%);
-    }
-
-    a:nth-child(3) {
-      background-color: black;
-      text-align: right;
-      padding-right: 3rem;
-      justify-content: right;
-      grid-row: 1/-1;
-      grid-column: 1/2;
-
-      svg {
-        padding-right: 0.5rem;
-      }
-    }
-  }
-}
-/*********************************
-
-THE MAIN FOR HOME PAGE CSS IS UNDER .INDEX
-
-IT ENDS HERE
-**********************************/
-
-/*********************************
-MEDIA QUERIE FOR MOBILE VIEW BELOW
-
-IT STARS HERE
-**********************************/
-@media only screen and (min-width: 850px) {
-  /*********************************
-  MOBILE VIEW FOR HOME PAGE NESTED IN INDEX BELOW
-
-  IT STARS HERE
-  **********************************/
-  .index {
-    .split {
-      a:nth-child(3) {
-        justify-content: end;
-        padding-right: 3rem;
-      }
-
-      a:nth-child(3):after {
-        content: "";
-        display: block;
-        width: 0%;
-        height: 1px;
-        bottom: 0px;
-        position: relative;
-        background-color: currentColor;
-
-        transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
-        position: relative;
-        bottom: 3px;
-      }
-
-      a:nth-child(3):hover:after {
-        width: 100%;
-      }
-
-      a:nth-child(4) {
-        justify-content: start;
-        padding-left: 3rem;
-      }
-
-      a:nth-child(4):before {
-        content: "";
-        display: block;
-        width: 0%;
-        height: 1px;
-        background-color: currentColor;
-        transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
-        position: relative;
-        bottom: 3px;
-      }
-
-      a:nth-child(4):hover:before {
-        width: 100%;
-      }
-    }
-  }
-  /*********************************
-  MOBILE VIEW FOR HOME PAGE NESTED IN INDEX ABOVE
-
-  IT ENDS HERE
-  **********************************/
-}
-
-/*********************************
-MEDIA QUERIE FOR MOBILE VIEW ABOVE
-
-IT ENDS HERE
-**********************************/
-
-/*********************************
-MEDIA QUERIE FOR BURGER MENU BELOW
-
-IT STARTS HERE
-**********************************/
-@media only screen and (max-width: 850px) {
-  /* burger menu visible */
-  .nav-links {
-    position: absolute;
-    right: 0px;
-    top: 9vh;
-    height: 85vh;
-    width: 60%;
-    background-color: white;
-    z-index: 2;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
-    transform: translateX(0%);
-    transition: all 0.5s ease-in;
-
-    li {
-      opacity: 0;
-      .lefty {
-        margin-left: 0;
-      }
-      &.hidden {
-        display: initial;
-      }
-    }
+    transition-delay: 850ms;
   }
 
-  .nav-hidden {
-    display: none;
-  }
-
-  .nav-hidden-move {
-    transform: translateX(100%);
-  }
-
-  .burger {
-    display: block;
-  }
-
-  footer {
-    display: none;
-  }
-
-  .burger.move {
-    span:nth-child(1) {
-      transform: translateY(-10px);
-      opacity: 0;
-    }
-    span:nth-child(2) {
-      transform: translateX(3px) rotate(45deg);
-    }
-    span:nth-child(3) {
-      transform: translateX(-3px) rotate(-45deg);
-    }
-  }
-}
-
-/*********************************
-MEDIA QUERIE FOR BURGER MENU ABOVE
-
-IT ENDS HERE
-**********************************/
-
-/*********************************
-SOME TEST STYLING FOR ROOMS START
-**********************************/
-.rooms,
-.collection {
-  overflow-x: hidden;
-  .slide {
-    a {
-      color: black;
-      text-decoration: none;
-      margin: 1rem;
-    }
-  }
-
-  a::after {
+  a:after {
     content: "";
     display: block;
     width: 100%;
@@ -456,200 +203,107 @@ SOME TEST STYLING FOR ROOMS START
     bottom: 0px;
     position: relative;
     background-color: currentColor;
+
     transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
   }
 
-  a:hover::after {
+  a:hover:after {
     width: 0;
   }
 }
 
-.rooms {
-  .slide {
-    width: 100vw;
-    height: 90%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    user-select: none;
 
-    img {
-      width: 100%;
-      height: 60vh;
-      transition: transform 0.3s ease-in-out;
-      object-fit: cover;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-        rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    }
-  }
-}
 
-.slider-container {
-  height: 91vh;
 
-  display: inline-flex;
-  // overflow: hidden;
-  transform: translateX(0);
-  transition: transform 0.3s ease-out;
-  cursor: grab;
 
-  font: var(--akkurat);
-}
-
-.grabbing {
-  cursor: grabbing;
-}
-
-.carousel__button {
-  transform: translateY(-50%);
-
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-
-  svg {
-    width: 20px;
-  }
-}
-
-.carousel__button--left {
-  margin-right: 1.5rem;
-}
-
-.carousel__button--right {
-  margin-left: 1.5rem;
-}
-
-.pbuttons {
-  display: flex;
-  align-items: center;
-
-  a {
-    font-size: var(--nav-links-size);
-    font: var(--akkurat);
-  }
-
-  &.first {
-    margin-left: 2.5rem;
-  }
-
-  &.last {
-    margin-right: 2.5rem;
-  }
-}
-
-.rooms-grid {
-  display: grid;
-
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  max-height: 75%;
-  h1 {
-    grid-row: 1/-1;
-    grid-column: 1/-1;
-    z-index: 1;
-    font: var(--gotham);
-    font-size: calc(50px + (80 - 50) * ((100vw - 300px) / (1600 - 300)));
-    color: white;
-  }
-  img {
-    grid-row: 1/-1;
-    grid-column: 1/-1;
-  }
-}
-
-.collection {
-  h3 {
-    font: var(--gotham);
-    font-size: var(--nav-links-size);
-  }
-
-  .slide {
-    width: 100vw;
-    height: 90%;
-    display: grid;
-    grid-template-rows: 1fr auto;
-
-    align-items: center;
-    justify-items: center;
-    user-select: none;
-
-    img {
-      width: calc(300px + (350 - 300) * ((100vw - 300px) / (1600 - 300)));
-      transition: transform 0.3s ease-in-out;
-      box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
-        rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-        rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
-
-    svg {
-      width: 1.5rem;
-      margin-top: 1rem;
-      margin-left: 300px;
-    }
-  }
-
-  .art-desc {
-    width: calc(300px + (350 - 300) * ((100vw - 300px) / (1600 - 300)));
-    margin-top: calc(0px + (35 - 0) * ((100vw - 300px) / (1600 - 300)));
-    font-size: var(--nav-links-size);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2.5rem;
-  }
-
-  .last-slide {
-    img {
-      width: calc(300px + (600 - 300) * ((100vw - 300px) / (1600 - 300)));
-    }
-  }
-}
-
-.last-slide {
-  opacity: 0;
-}
-
-.room-desc {
-  max-width: 80%;
-  margin: 2.8rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: var(--nav-links-size);
-
-  .swipe {
-    margin-top: 1rem;
-    opacity: 0.9;
-    display: flex;
-    svg {
-      width: 1rem;
-      margin-left: 0.5rem;
-      align-self: end;
-    }
-  }
-}
-
-.slide .grabbing .slide img {
-  transform: scale(0.9);
-}
-
-@media only screen and (min-width: 800px) {
-  .rooms {
-    img {
-      max-width: 55%;
-    }
-
-    .room-desc {
-      max-width: 40%;
-    }
-  }
-}
 
 /*********************************
-SEACRH PAGE STARTS HERE
+03. Home page
+**********************************/
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 91vh;
+  font: 900 2em cookie;
+  margin: 0;
+  color: white;
+
+  h2 {
+    font: var(--gotham);
+    z-index: 1;
+    color: white;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    align-self: end;
+    justify-self: center;
+    margin: 0;
+    font-size: calc(55px + (100 - 55) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  p {
+    font: var(--gotham);
+    grid-row: 2/3;
+    grid-column: 1/2;
+    z-index: 1;
+    align-self: start;
+    justify-self: end;
+    padding-right: 2.9rem;
+    margin: 0;
+    font-size: calc(22px + (50 - 22) * ((100vw - 300px) / (1600 - 300)));
+  }
+
+  a {
+    font: var(--akkurat);
+    font-size: calc(18px + (30 - 18) * ((100vw - 300px) / (1600 - 300)));
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 7rem;
+    color: white;
+  }
+
+  a:nth-child(4) {
+    background: url("https://louisiana.dk/wp-content/uploads/2020/10/3_KMA0508-960x736.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-left: 3rem;
+    justify-content: left;
+    grid-row: 1/-1;
+    grid-column: 2/3;
+
+    svg {
+      padding-left: var(--home-arrows-padding);
+    }
+  }
+
+  svg {
+    width: calc(32px + (40 - 32) * ((100vw - 300px) / (1600 - 300)));
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(87deg)
+      brightness(109%) contrast(101%);
+  }
+
+  a:nth-child(3) {
+    background-color: black;
+    text-align: right;
+    padding-right: 3rem;
+    justify-content: right;
+    grid-row: 1/-1;
+    grid-column: 1/2;
+
+    svg {
+      padding-right: var(--home-arrows-padding);
+    }
+  }
+}
+
+
+
+
+
+
+/*********************************
+04. Search page
 **********************************/
 .search {
   min-height: 91vh;
@@ -745,6 +399,383 @@ SEACRH PAGE STARTS HERE
     }
   }
 }
+
+
+
+
+
+
 /*********************************
-SEACRH PAGE ENDS HERE
+05. Rooms and Collection
 **********************************/
+.rooms,
+.collection {
+  overflow-x: hidden;
+  .slide {
+    a {
+      color: black;
+      text-decoration: none;
+      margin: 1rem;
+    }
+  }
+
+  a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    position: relative;
+    background-color: currentColor;
+    transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
+  }
+
+  a:hover::after {
+    width: 0;
+  }
+
+  .room-desc {
+    max-width: 80%;
+    margin: 2.8rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font: var(--akkurat);
+    font-size: var(--nav-links-size);
+  
+    .swipe {
+      margin-top: 1rem;
+      opacity: 0.9;
+      display: flex;
+      svg {
+        width: 1rem;
+        margin-left: var(--home-arrows-padding);
+        align-self: end;
+      }
+    }
+  }
+}
+
+
+  /*********************************
+    05.1 Rooms
+  **********************************/
+.rooms {
+  .slide {
+    width: 100vw;
+    height: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+
+    img {
+    width: 100%;
+    height: 60vh;
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+  }
+
+  .rooms-grid {
+    display: grid;
+  
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-height: 75%;
+    h1 {
+      grid-row: 1/-1;
+      grid-column: 1/-1;
+      z-index: 1;
+      font: var(--gotham);
+      font-size: calc(50px + (80 - 50) * ((100vw - 300px) / (1600 - 300)));
+      color: white;
+    }
+    img {
+      grid-row: 1/-1;
+      grid-column: 1/-1;
+    }
+  }
+
+  .pbuttons {
+    display: flex;
+    align-items: center;
+  
+    a {
+      font-size: var(--nav-links-size);
+      font: var(--akkurat);
+    }
+  
+    &.first {
+      margin-left: 2.5rem;
+    }
+  
+    &.last {
+      margin-right: 2.5rem;
+    }
+  }
+}
+
+
+  /*********************************
+    05.2 Collection
+  **********************************/
+.collection {
+  h3 {
+    font: var(--gotham);
+    font-size: var(--nav-links-size);
+  }
+
+  .slide {
+    width: 100vw;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    align-items: center;
+    justify-items: center;
+    user-select: none;
+
+    img {
+      width: var(--art-page-elem-widths);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    svg {
+      width: 1.5rem;
+      margin-top: 1rem;
+      margin-left: 300px;
+    }
+  }
+
+  .art-desc {
+    width: var(--art-page-elem-widths);
+    margin-top: calc(0px + (35 - 0) * ((100vw - 300px) / (1600 - 300)));
+    font-size: var(--nav-links-size);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.5rem;
+
+    p {
+      font: var(--akkurat);
+    }
+  }
+
+  .last-slide {
+    img {
+      width: calc(300px + (600 - 300) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    a {
+      font: var(--akkurat);
+      font-size: var(--nav-links-size);
+    }
+  }
+}
+
+
+  /*********************************
+    05.3 Carousel
+  **********************************/
+.slider-container {
+  height: 91vh;
+  display: inline-flex;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+  cursor: grab;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
+
+.carousel__button {
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  svg {
+    width: 20px;
+  }
+}
+
+.carousel__button--left {
+  margin-right: var(--room-arrows-margin);
+}
+
+.carousel__button--right {
+  margin-left: var(--room-arrows-margin);
+}
+
+.last-slide {
+  opacity: 0;
+}
+
+.slide .grabbing .slide img {
+  transform: scale(0.9);
+}
+
+
+
+
+
+
+/*********************************
+06. Keyframe for fading in links in mobile view
+**********************************/
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+
+
+
+
+/*********************************
+07. Media queries
+**********************************/
+
+  /*********************************
+    07.1 Home page desktop view
+  **********************************/
+@media only screen and (min-width: 850px) {
+    .split {
+      a:nth-child(3) {
+        justify-content: end;
+        padding-right: 3rem;
+      }
+
+      a:nth-child(3):after {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 1px;
+        bottom: 0px;
+        position: relative;
+        background-color: currentColor;
+
+        transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
+        position: relative;
+        bottom: 3px;
+      }
+
+      a:nth-child(3):hover:after {
+        width: 100%;
+      }
+
+      a:nth-child(4) {
+        justify-content: start;
+        padding-left: 3rem;
+      }
+
+      a:nth-child(4):before {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 1px;
+        background-color: currentColor;
+        transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
+        position: relative;
+        bottom: 3px;
+      }
+
+      a:nth-child(4):hover:before {
+        width: 100%;
+      }
+    }
+}
+
+
+  /*********************************
+    07.2 Make burger menu, hide footer
+  **********************************/
+@media only screen and (max-width: 850px) {
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    top: 9vh;
+    height: 85vh;
+    width: 60%;
+    background-color: white;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    transform: translateX(0%);
+    transition: all 0.5s ease-in;
+
+    li {
+      opacity: 0;
+      .lefty {
+        margin-left: 0;
+      }
+      &.hidden {
+        display: initial;
+      }
+    }
+  }
+
+  .nav-hidden {
+    display: none;
+  }
+
+  .nav-hidden-move {
+    transform: translateX(100%);
+  }
+
+  .burger {
+    display: block;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .burger.move {
+    span:nth-child(1) {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    span:nth-child(2) {
+      transform: translateX(3px) rotate(45deg);
+    }
+    span:nth-child(3) {
+      transform: translateX(-3px) rotate(-45deg);
+    }
+  }
+}
+
+  /*********************************
+    07.3 Width changes in rooms pages
+  **********************************/
+@media only screen and (min-width: 800px) {
+  .rooms {
+    img {
+      max-width: 55%;
+    }
+
+    .room-desc {
+      max-width: 40%;
+    }
+  }
+}
