@@ -3,10 +3,10 @@ VERY IMPORTANT STUFF DO NOT TOUCH
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 **********************************/
 :root {
-  --gotham: normal 700 1rem gotham, normal;
+  --gotham: normal 400 1rem gotham-bold, normal;
   --akkurat: normal 400 1rem akkurat, normal;
   --nav-links-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
-  --akkurat-bold: normal 600 1rem akkurat-bold, normal;
+  --akkurat-bold: normal 400 1rem akkurat-bold, normal;
 }
 
 .bold {
@@ -77,7 +77,7 @@ footer {
     position: relative;
     background-color: currentColor;
 
-    transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+    transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
   }
 
   a:hover:after {
@@ -146,7 +146,7 @@ nav {
       position: relative;
       background-color: currentColor;
 
-      transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+      transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
     }
 
     a:hover:after {
@@ -226,7 +226,7 @@ IT BEGINS HERE
       z-index: 1;
       align-self: start;
       justify-self: end;
-      padding-right: 2.5rem;
+      padding-right: 2.9rem;
       margin: 0;
       font-size: calc(22px + (50 - 22) * ((100vw - 300px) / (1600 - 300)));
     }
@@ -309,7 +309,7 @@ IT STARS HERE
         position: relative;
         background-color: currentColor;
 
-        transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+        transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
         position: relative;
         bottom: 3px;
       }
@@ -329,7 +329,7 @@ IT STARS HERE
         width: 0%;
         height: 1px;
         background-color: currentColor;
-        transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+        transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
         position: relative;
         bottom: 3px;
       }
@@ -357,7 +357,7 @@ MEDIA QUERIE FOR BURGER MENU BELOW
 
 IT STARTS HERE
 **********************************/
-@media only screen and (max-width: 1110px) {
+@media only screen and (max-width: 850px) {
   /* burger menu visible */
   .nav-links {
     position: absolute;
@@ -426,8 +426,16 @@ IT ENDS HERE
 /*********************************
 SOME TEST STYLING FOR ROOMS START
 **********************************/
-.rooms {
+.rooms,
+.collection {
   overflow-x: hidden;
+  .slide {
+    a {
+      color: black;
+      text-decoration: none;
+      margin: 1rem;
+    }
+  }
 
   a::after {
     content: "";
@@ -437,12 +445,15 @@ SOME TEST STYLING FOR ROOMS START
     bottom: 0px;
     position: relative;
     background-color: currentColor;
-    transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+    transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
   }
 
   a:hover::after {
     width: 0;
   }
+}
+
+.rooms {
   .slide {
     width: 100vw;
     height: 90%;
@@ -454,18 +465,11 @@ SOME TEST STYLING FOR ROOMS START
 
     img {
       width: 100%;
-      // height: 100%;
       height: 60vh;
       transition: transform 0.3s ease-in-out;
       object-fit: cover;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
         rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    }
-
-    .btn {
-      color: black;
-      text-decoration: none;
-      margin: 1rem;
     }
   }
 }
@@ -536,8 +540,7 @@ SOME TEST STYLING FOR ROOMS START
     grid-column: 1/-1;
     z-index: 1;
     font: var(--gotham);
-    font-size: calc(40px + (50 - 40) * ((100vw - 300px) / (1600 - 300)));
-    letter-spacing: 3px;
+    font-size: calc(50px + (80 - 50) * ((100vw - 300px) / (1600 - 300)));
     color: white;
   }
   img {
@@ -547,11 +550,9 @@ SOME TEST STYLING FOR ROOMS START
 }
 
 .collection {
-  overflow-x: hidden;
   h3 {
     font: var(--gotham);
     font-size: var(--nav-links-size);
-    letter-spacing: 1.5px;
   }
 
   .slide {
@@ -565,12 +566,17 @@ SOME TEST STYLING FOR ROOMS START
     user-select: none;
 
     img {
-      // width: calc(300px + (400 - 300) * ((100vw - 300px) / (1600 - 300)));
       width: 340px;
       transition: transform 0.3s ease-in-out;
       box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
         rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
         rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    svg {
+      width: 1.5rem;
+      margin-top: 1rem;
+      margin-left: 300px;
     }
   }
 
@@ -581,19 +587,22 @@ SOME TEST STYLING FOR ROOMS START
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .last-slide {
+    img {
+      width: calc(300px + (600 - 300) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    a {
+      margin-top: -5rem;
+    }
   }
 }
 
-.art-arrows {
-  margin-top: 1rem;
-  margin-left: calc(200px + (350 - 200) * ((100vw - 300px) / (1600 - 300)));
-  svg {
-    width: 1.5rem;
-  }
-
-  svg:first-child {
-    margin-right: 0.5rem;
-  }
+.last-slide {
+  opacity: 0;
 }
 
 .room-desc {
@@ -717,7 +726,7 @@ SEACRH PAGE STARTS HERE
       position: relative;
       background-color: currentColor;
 
-      transition: width 0.6s cubic-bezier(0.73, 0, 0.38, 1);
+      transition: width 0.5s cubic-bezier(0.73, 0, 0.38, 1);
     }
 
     a:hover:after {

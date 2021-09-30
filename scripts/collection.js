@@ -27,6 +27,7 @@ function collection() {
     })
     .then(function (data) {
       handleArt(data);
+      document.querySelector(".last-slide").style.opacity = 1;
       console.log("generate slides");
     });
   function handleArt(data) {
@@ -35,7 +36,6 @@ function collection() {
       //clone it
       const clone = template.cloneNode(true);
       // change content
-      clone.querySelector("svg:first-child").style.opacity = 0;
       clone.querySelector("img").src = data.image_url;
       clone.querySelector("h3").textContent = data.artist;
       clone.querySelector("i").textContent = data.title;
@@ -47,8 +47,9 @@ function collection() {
       clone.querySelector("p:last-of-type").textContent = data.technique;
       //grab parent
       const parent = document.querySelector(".slider-container");
+      const last = parent.querySelector(".last-slide");
       //append
-      parent.appendChild(clone);
+      parent.insertBefore(clone, last);
     });
     addCarousel();
   }
