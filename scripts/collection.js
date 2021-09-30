@@ -42,7 +42,15 @@ function collection() {
 
       if (data.year === 0) {
         clone.querySelector(".year").textContent = "unkown";
-      } else clone.querySelector(".year").textContent = data.year;
+        clone.querySelector(
+          "img"
+        ).alt = `${data.artist}, ${data.title}, year is unknown, ${data.technique}`;
+      } else {
+        clone.querySelector(
+          "img"
+        ).alt = `${data.artist}, ${data.title}, ${data.year}, ${data.technique}`;
+        clone.querySelector(".year").textContent = data.year;
+      }
 
       clone.querySelector("p:last-of-type").textContent = data.technique;
       //grab parent
